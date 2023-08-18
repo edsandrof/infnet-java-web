@@ -27,5 +27,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-.idea
-infnet-java-oo.iml
+.idea/jpa-buddy.xml
+.idea/workspace.xml
