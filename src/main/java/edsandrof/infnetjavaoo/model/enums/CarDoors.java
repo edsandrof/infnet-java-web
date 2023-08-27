@@ -1,6 +1,6 @@
 package main.java.edsandrof.infnetjavaoo.model.enums;
 
-import main.java.edsandrof.infnetjavaoo.exceptions.InvalidEnumType;
+import main.java.edsandrof.infnetjavaoo.exceptions.InvalidEnumTypeException;
 
 public enum CarDoors {
     TWO_DOORS(2),
@@ -21,7 +21,7 @@ public enum CarDoors {
             return CarDoors.valueOf(value);
 
         } catch (IllegalArgumentException e) {
-            throw new InvalidEnumType("Error in value of CarDoors enum: " + e.getMessage());
+            throw new InvalidEnumTypeException("Error in value of CarDoors enum: " + e.getMessage());
         }
     }
 }

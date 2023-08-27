@@ -1,6 +1,6 @@
 package main.java.edsandrof.infnetjavaoo.model.enums;
 
-import main.java.edsandrof.infnetjavaoo.exceptions.InvalidEnumType;
+import main.java.edsandrof.infnetjavaoo.exceptions.InvalidEnumTypeException;
 
 public enum FuelType {
     GASOLINE,
@@ -12,7 +12,7 @@ public enum FuelType {
             return FuelType.valueOf(value);
 
         } catch (IllegalArgumentException e) {
-            throw new InvalidEnumType("Error in value of FuelType enum: " + e.getMessage());
+            throw new InvalidEnumTypeException("Error in value of FuelType enum: " + e.getMessage());
         }
     }
 }
