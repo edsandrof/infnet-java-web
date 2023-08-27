@@ -8,9 +8,7 @@ import main.java.edsandrof.infnetjavaoo.service.CsvToCar;
 import main.java.edsandrof.infnetjavaoo.service.CsvToMotorcycle;
 import main.java.edsandrof.infnetjavaoo.service.CsvToTruck;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class Application {
 
@@ -20,36 +18,37 @@ public class Application {
 
         CsvService csvService = new CsvService();
         List<String[]> csvCars = csvService.readFile(path + "cars.csv");
-        List<Vehicle> cars = Vehicle.loadFromCsv(csvCars, new CsvToCar());
-
         List<String[]> csvTrucks = csvService.readFile(path + "trucks.csv");
-        List<Vehicle> trucks = Vehicle.loadFromCsv(csvTrucks, new CsvToTruck());
-
         List<String[]> csvMotorcycle = csvService.readFile(path + "motorcycles.csv");
-        List<Vehicle> motorcycles = Vehicle.loadFromCsv(csvMotorcycle, new CsvToMotorcycle());
 
-        List<Vehicle> vehiclesToPurchase1 = Arrays.asList(
-                cars.get(0),
-                motorcycles.get(0),
-                trucks.get(0)
+        List<Vehicle> allVehicles = new ArrayList<>();
+        allVehicles.addAll(Vehicle.loadFromCsv(csvCars, new CsvToCar()));
+        allVehicles.addAll(Vehicle.loadFromCsv(csvTrucks, new CsvToTruck()));
+        allVehicles.addAll(Vehicle.loadFromCsv(csvMotorcycle, new CsvToMotorcycle()));
+
+        List<Vehicle> vehiclesToBuy1 = Arrays.asList(
+                allVehicles.get(0),
+                allVehicles.get(2),
+                allVehicles.get(5)
         );
 
-        List<Vehicle> vehiclesToPurchase2 = Arrays.asList(
-                cars.get(1),
-                motorcycles.get(1),
-                trucks.get(1)
+        List<Vehicle> vehiclesToBuy2 = Arrays.asList(
+                allVehicles.get(1),
+                allVehicles.get(4),
+                allVehicles.get(6)
         );
 
         // seller
-        VehicleDealer vehicleDealer = new VehicleDealer("AllCars Vehicles", "Street park");
+        VehicleDealer vehicleDealer = new VehicleDealer("AllCars Vehicles", "Street park",
+                new HashSet<>(allVehicles));
 
         // buyers
         VehicleBuyer fedexTransport = new VehicleBuyer("FedEx Transports", "1st Avenue");
         VehicleBuyer dhlLogistics = new VehicleBuyer("DHL Logistics", "Central park");
 
         // sales
-        vehicleDealer.saleVehicles(fedexTransport, vehiclesToPurchase1);
-        vehicleDealer.saleVehicles(dhlLogistics, vehiclesToPurchase2);
+        vehicleDealer.saleVehicles(fedexTransport, vehiclesToBuy1);
+        vehicleDealer.saleVehicles(dhlLogistics, vehiclesToBuy2);
 
         vehicleDealer.generateReport(path + "report.html");
     }
