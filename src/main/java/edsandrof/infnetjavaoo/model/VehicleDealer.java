@@ -7,11 +7,14 @@ import java.util.*;
 public class VehicleDealer {
     private String name;
     private String address;
-    private final Set<VehicleSale> sales = new HashSet<>();
+    private final VehicleSale[] sales;
+    private final Set<Vehicle> availableVehicles;
 
-    public VehicleDealer(String name, String address) {
+    public VehicleDealer(String name, String address, Set<Vehicle> availableVehicles) {
         this.name = name;
         this.address = address;
+        this.availableVehicles = availableVehicles;
+        this.sales = new VehicleSale[10];
     }
 
     public String getName() {
@@ -30,12 +33,15 @@ public class VehicleDealer {
         this.address = address;
     }
 
-    public Set<VehicleSale> getSales() {
+    public VehicleSale[] getSales() {
         return sales;
     }
 
     public void saleVehicles(VehicleBuyer buyer, List<Vehicle> vehicles) {
         sales.add(new VehicleSale(buyer, vehicles));
+    public Set<Vehicle> getAvailableVehicles() {
+        return availableVehicles;
+    }
     }
 
     public void generateReport(String path) {
