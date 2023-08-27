@@ -1,5 +1,6 @@
 package main.java.edsandrof.infnetjavaoo.model;
 
+import main.java.edsandrof.infnetjavaoo.exceptions.UnavailableVehicleException;
 import main.java.edsandrof.infnetjavaoo.service.ReportService;
 
 import java.util.*;
@@ -37,15 +38,33 @@ public class VehicleDealer {
         return sales;
     }
 
-    public void saleVehicles(VehicleBuyer buyer, List<Vehicle> vehicles) {
-        sales.add(new VehicleSale(buyer, vehicles));
     public Set<Vehicle> getAvailableVehicles() {
         return availableVehicles;
     }
+
+    public void saleVehicles(VehicleBuyer buyer, List<Vehicle> vehiclesToBuy) {
+        checkVehicleAvailability(vehiclesToBuy);
+
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] == null) {
+                sales[i] = new VehicleSale(buyer, vehiclesToBuy);
+                break;
+            }
+        }
+        vehiclesToBuy.forEach(availableVehicles::remove);
     }
 
     public void generateReport(String path) {
         ReportService reportService = new ReportService();
         reportService.writeReport(path, name, sales);
+    }
+
+    private void checkVehicleAvailability(List<Vehicle> vehiclesToBuy) {
+        for (Vehicle vehicle : vehiclesToBuy) {
+
+            if (!availableVehicles.contains(vehicle)) {
+                throw new UnavailableVehicleException("Vehicle " + vehicle + " is unavailable for sale.");
+            }
+        }
     }
 }
