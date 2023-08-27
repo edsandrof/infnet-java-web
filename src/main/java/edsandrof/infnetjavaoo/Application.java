@@ -22,9 +22,9 @@ public class Application {
         List<String[]> csvMotorcycle = csvService.readFile(path + "motorcycles.csv");
 
         List<Vehicle> allVehicles = new ArrayList<>();
-        allVehicles.addAll(Vehicle.loadFromCsv(csvCars, new CsvToCar()));
-        allVehicles.addAll(Vehicle.loadFromCsv(csvTrucks, new CsvToTruck()));
-        allVehicles.addAll(Vehicle.loadFromCsv(csvMotorcycle, new CsvToMotorcycle()));
+        allVehicles.addAll(csvService.loadVehicles(csvCars, new CsvToCar()));
+        allVehicles.addAll(csvService.loadVehicles(csvTrucks, new CsvToTruck()));
+        allVehicles.addAll(csvService.loadVehicles(csvMotorcycle, new CsvToMotorcycle()));
 
         List<Vehicle> vehiclesToBuy1 = Arrays.asList(
                 allVehicles.get(0),

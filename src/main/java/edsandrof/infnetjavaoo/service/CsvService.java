@@ -1,6 +1,7 @@
 package main.java.edsandrof.infnetjavaoo.service;
 
 import main.java.edsandrof.infnetjavaoo.exceptions.FileException;
+import main.java.edsandrof.infnetjavaoo.model.Vehicle;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -26,5 +27,9 @@ public class CsvService {
         }
 
         return fileContent;
+    }
+
+    public List<Vehicle> loadVehicles(List<String[]> content, CsvToVehicle csvToVehicle) {
+        return csvToVehicle.convert(content);
     }
 }

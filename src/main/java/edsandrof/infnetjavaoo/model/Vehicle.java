@@ -1,9 +1,6 @@
 package main.java.edsandrof.infnetjavaoo.model;
 
 import main.java.edsandrof.infnetjavaoo.model.enums.FuelType;
-import main.java.edsandrof.infnetjavaoo.service.CsvToVehicle;
-
-import java.util.List;
 
 public abstract class Vehicle {
     private final Long id;
@@ -26,10 +23,6 @@ public abstract class Vehicle {
 
     public void brake() {
         System.out.println("This vehicle is braking...");
-    }
-
-    public static List<Vehicle> loadFromCsv(List<String[]> content, CsvToVehicle csvToVehicle) {
-        return csvToVehicle.convert(content);
     }
 
     public abstract double getPrice();
