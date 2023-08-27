@@ -1,0 +1,4 @@
+id,brand,year,fuel,base_price,number_doors
+1,Audi,2020,GASOLINE,10000,FOUR_DOORS
+2,BMW,2019,GASOLINE,12000,TWO_DOORS
+3,Lamborghini,2021,GASOLINE,18000,TWO_DOORS
