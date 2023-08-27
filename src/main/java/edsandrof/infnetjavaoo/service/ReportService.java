@@ -7,7 +7,6 @@ import main.java.edsandrof.infnetjavaoo.model.VehicleSale;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Set;
 
 public class ReportService {
     private static final char OPEN_TAG = '<';
@@ -20,7 +19,7 @@ public class ReportService {
     public static final String TH_TAG = "th";
     public static final String TD_TAG = "td";
 
-    public void writeReport(String path, String dealerName, Set<VehicleSale> sales) {
+    public void writeReport(String path, String dealerName, VehicleSale[] sales) {
         StringBuilder sb = new StringBuilder();
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
@@ -29,6 +28,10 @@ public class ReportService {
             bw.newLine();
 
             for (VehicleSale sale : sales) {
+                if (sale == null) {
+                    continue;
+                }
+
                 // table
                 bw.write("<b>" + sale.getVehicleBuyer() + "</b>");
                 bw.newLine();
