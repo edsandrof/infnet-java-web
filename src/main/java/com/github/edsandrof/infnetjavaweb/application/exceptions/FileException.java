@@ -1,4 +1,4 @@
-package main.java.edsandrof.infnetjavaoo.exceptions;
+package com.github.edsandrof.infnetjavaweb.application.exceptions;
 
 public class FileException extends RuntimeException {
 

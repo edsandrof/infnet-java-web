@@ -1,9 +1,9 @@
-package main.java.edsandrof.infnetjavaoo.service.impl;
+package com.github.edsandrof.infnetjavaweb.model.service.impl;
 
-import main.java.edsandrof.infnetjavaoo.model.Truck;
-import main.java.edsandrof.infnetjavaoo.model.Vehicle;
-import main.java.edsandrof.infnetjavaoo.model.enums.FuelType;
-import main.java.edsandrof.infnetjavaoo.service.CsvToVehicle;
+import com.github.edsandrof.infnetjavaweb.model.domain.Truck;
+import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
+import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
+import com.github.edsandrof.infnetjavaweb.model.service.CsvToVehicle;
 
 import java.util.ArrayList;
 import java.util.List;

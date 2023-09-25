@@ -1,7 +1,7 @@
-package main.java.edsandrof.infnetjavaoo.model;
+package com.github.edsandrof.infnetjavaweb.model.domain;
 
-import main.java.edsandrof.infnetjavaoo.model.enums.CarDoors;
-import main.java.edsandrof.infnetjavaoo.model.enums.FuelType;
+import com.github.edsandrof.infnetjavaweb.model.enums.CarDoors;
+import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
 
 public class Car extends Vehicle {
 

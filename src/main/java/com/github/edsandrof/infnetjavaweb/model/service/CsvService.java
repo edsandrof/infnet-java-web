@@ -1,7 +1,7 @@
-package main.java.edsandrof.infnetjavaoo.service;
+package com.github.edsandrof.infnetjavaweb.model.service;
 
-import main.java.edsandrof.infnetjavaoo.exceptions.FileException;
-import main.java.edsandrof.infnetjavaoo.model.Vehicle;
+import com.github.edsandrof.infnetjavaweb.application.exceptions.FileException;
+import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,6 +1,6 @@
-package main.java.edsandrof.infnetjavaoo.model.enums;
+package com.github.edsandrof.infnetjavaweb.model.enums;
 
-import main.java.edsandrof.infnetjavaoo.exceptions.InvalidEnumTypeException;
+import com.github.edsandrof.infnetjavaweb.application.exceptions.InvalidEnumTypeException;
 
 public enum CarDoors {
     TWO_DOORS(2),

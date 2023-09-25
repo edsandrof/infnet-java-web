@@ -1,4 +1,4 @@
-package main.java.edsandrof.infnetjavaoo.model;
+package com.github.edsandrof.infnetjavaweb.model.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;

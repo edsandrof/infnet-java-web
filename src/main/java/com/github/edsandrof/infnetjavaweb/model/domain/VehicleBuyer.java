@@ -1,4 +1,4 @@
-package main.java.edsandrof.infnetjavaoo.model;
+package com.github.edsandrof.infnetjavaweb.model.domain;
 
 public class VehicleBuyer {
     private String name;

@@ -1,7 +1,7 @@
-package main.java.edsandrof.infnetjavaoo.model;
+package com.github.edsandrof.infnetjavaweb.model.domain;
 
-import main.java.edsandrof.infnetjavaoo.exceptions.UnavailableVehicleException;
-import main.java.edsandrof.infnetjavaoo.service.ReportService;
+import com.github.edsandrof.infnetjavaweb.application.exceptions.UnavailableVehicleException;
+import com.github.edsandrof.infnetjavaweb.model.service.ReportService;
 
 import java.util.*;
 

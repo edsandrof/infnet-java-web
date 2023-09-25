@@ -1,12 +1,12 @@
 package main.java.edsandrof.infnetjavaoo;
 
-import main.java.edsandrof.infnetjavaoo.model.Vehicle;
-import main.java.edsandrof.infnetjavaoo.model.VehicleBuyer;
-import main.java.edsandrof.infnetjavaoo.model.VehicleDealer;
-import main.java.edsandrof.infnetjavaoo.service.CsvService;
-import main.java.edsandrof.infnetjavaoo.service.impl.CsvToCar;
-import main.java.edsandrof.infnetjavaoo.service.impl.CsvToMotorcycle;
-import main.java.edsandrof.infnetjavaoo.service.impl.CsvToTruck;
+import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
+import com.github.edsandrof.infnetjavaweb.model.domain.VehicleBuyer;
+import com.github.edsandrof.infnetjavaweb.model.domain.VehicleDealer;
+import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
+import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToCar;
+import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToMotorcycle;
+import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToTruck;
 
 import java.util.*;
 
