@@ -1,9 +1,7 @@
 package com.github.edsandrof.infnetjavaweb.model.service;
 
-import com.github.edsandrof.infnetjavaweb.application.exceptions.VehicleNotFoundException;
 import com.github.edsandrof.infnetjavaweb.application.exceptions.VehicleSaleNotFoundException;
 import com.github.edsandrof.infnetjavaweb.infrastructure.repository.VehicleSaleRepository;
-import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleSale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +25,10 @@ public class VehicleSaleService {
 
     public VehicleSale register(VehicleSale vehicleSale) {
         return vehicleSaleRepository.save(vehicleSale);
+    }
+
+    public List<VehicleSale> registerAll(List<VehicleSale> vehicleSales) {
+        return vehicleSaleRepository.saveAll(vehicleSales);
     }
 
     public List<VehicleSale> listAll() {

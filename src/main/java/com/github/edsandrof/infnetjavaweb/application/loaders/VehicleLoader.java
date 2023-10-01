@@ -1,8 +1,6 @@
 package com.github.edsandrof.infnetjavaweb.application.loaders;
 
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
-import com.github.edsandrof.infnetjavaweb.model.domain.VehicleBuyer;
-import com.github.edsandrof.infnetjavaweb.model.domain.VehicleDealer;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
 import com.github.edsandrof.infnetjavaweb.model.service.VehicleService;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToCar;
@@ -14,7 +12,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.github.edsandrof.infnetjavaweb.infrastructure.util.Constant.FILE_PATH;
 
@@ -38,10 +37,10 @@ public class VehicleLoader implements ApplicationRunner {
         List<String[]> csvMotorcycle = csvService.readFile(FILE_PATH + "/motorcycles.csv");
 
         List<Vehicle> allVehicles = new ArrayList<>();
-        allVehicles.addAll(csvService.loadVehicles(csvCars, new CsvToCar()));
-        allVehicles.addAll(csvService.loadVehicles(csvTrucks, new CsvToTruck()));
-        allVehicles.addAll(csvService.loadVehicles(csvMotorcycle, new CsvToMotorcycle()));
+        allVehicles.addAll(csvService.loadType(csvCars, new CsvToCar()));
+        allVehicles.addAll(csvService.loadType(csvTrucks, new CsvToTruck()));
+        allVehicles.addAll(csvService.loadType(csvMotorcycle, new CsvToMotorcycle()));
 
-        vehicleService.registerAll(allVehicles);
+        allVehicles = vehicleService.registerAll(allVehicles);
     }
 }

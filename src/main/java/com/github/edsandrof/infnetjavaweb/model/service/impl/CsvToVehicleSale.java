@@ -7,8 +7,7 @@ import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.github.edsandrof.infnetjavaweb.model.enums.VehicleType.CAR;
-import static com.github.edsandrof.infnetjavaweb.model.enums.VehicleType.MOTORCYCLE;
+import static com.github.edsandrof.infnetjavaweb.model.enums.VehicleType.*;
 
 public class CsvToVehicleSale implements CsvToType<VehicleSale> {
 
@@ -18,7 +17,7 @@ public class CsvToVehicleSale implements CsvToType<VehicleSale> {
         List<Vehicle> vehicles = new ArrayList<>();
 
         for (String[] cols : content) {
-            // split vehicle ids
+
             String[] ids = cols[2].split("\\|");
 
             for (String typeAndId : ids) {
@@ -41,12 +40,12 @@ public class CsvToVehicleSale implements CsvToType<VehicleSale> {
 
         long id = Long.parseLong(typeAndId.substring(1));
 
-        Vehicle vehicle;
+        Vehicle vehicle = null;
         if (type == CAR) {
             vehicle = new Car(id);
         } else if (type == MOTORCYCLE) {
             vehicle = new Motorcycle(id);
-        } else {
+        } else if (type == TRUCK){
             vehicle = new Truck(id);
         }
         return vehicle;
