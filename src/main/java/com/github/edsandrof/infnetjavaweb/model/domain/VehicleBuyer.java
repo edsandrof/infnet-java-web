@@ -1,9 +1,19 @@
 package com.github.edsandrof.infnetjavaweb.model.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "vehicle_buyer")
 public class VehicleBuyer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String address;
+
+    public VehicleBuyer() {
+    }
 
     public VehicleBuyer(String name, String address) {
         this.name = name;

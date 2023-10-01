@@ -1,13 +1,30 @@
 package com.github.edsandrof.infnetjavaweb.model.domain;
 
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
+import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "vehicle")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Vehicle {
-    private final Long id;
-    private final String brand;
-    private final int year;
-    private final FuelType fuelType;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String brand;
+    private int year;
+
+    @Enumerated(EnumType.STRING)
+    private FuelType fuelType;
+
+    @Column(name = "base_price")
     private double basePrice;
+
+    public Vehicle() {
+    }
 
     public Vehicle(Long id, String brand, int year, FuelType fuelType, double basePrice) {
         this.id = id;

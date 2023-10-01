@@ -3,9 +3,17 @@ package com.github.edsandrof.infnetjavaweb.model.domain;
 import com.github.edsandrof.infnetjavaweb.model.enums.CarDoors;
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "car")
 public class Car extends Vehicle {
 
-    private final CarDoors numberOfDoors;
+    private CarDoors numberOfDoors;
+
+    public Car() {
+    }
 
     public Car(Long id, String brand, int year, FuelType fuelType, double basePrice, CarDoors numberOfDoors) {
         super(id, brand, year, fuelType, basePrice);
@@ -26,5 +34,10 @@ public class Car extends Vehicle {
         }
 
         return total;
+    }
+
+    @Override
+    public String toString() {
+        return "numberOfDoors: " + numberOfDoors + ", " + super.toString();
     }
 }
