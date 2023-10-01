@@ -7,19 +7,33 @@ import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToCar;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToMotorcycle;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToTruck;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-public class VehicleLoader {
+import static com.github.edsandrof.infnetjavaweb.infrastructure.util.Constant.FILE_PATH;
+
+@Order(1)
+@Component
+public class VehicleLoader implements ApplicationRunner {
+
+    private final VehicleService vehicleService;
+    private final CsvService csvService;
+
+    @Autowired
+    public VehicleLoader(VehicleService vehicleService, CsvService csvService) {
+        this.vehicleService = vehicleService;
+        this.csvService = csvService;
+    }
 
     public static void main(String[] args) {
-        String path = "src/main/resources/";
-        Locale.setDefault(Locale.US);
-
-        CsvService csvService = new CsvService();
-        List<String[]> csvCars = csvService.readFile(path + "cars.csv");
-        List<String[]> csvTrucks = csvService.readFile(path + "trucks.csv");
-        List<String[]> csvMotorcycle = csvService.readFile(path + "motorcycles.csv");
+        List<String[]> csvCars = csvService.readFile(FILE_PATH + "/cars.csv");
+        List<String[]> csvTrucks = csvService.readFile(FILE_PATH + "/trucks.csv");
+        List<String[]> csvMotorcycle = csvService.readFile(FILE_PATH + "/motorcycles.csv");
 
         List<Vehicle> allVehicles = new ArrayList<>();
         allVehicles.addAll(csvService.loadVehicles(csvCars, new CsvToCar()));
@@ -50,6 +64,11 @@ public class VehicleLoader {
         vehicleDealer.saleVehicles(fedexTransport, vehiclesToBuy1);
         vehicleDealer.saleVehicles(dhlLogistics, vehiclesToBuy2);
 
-        vehicleDealer.generateReport(path + "report.html");
+        vehicleDealer.generateReport(FILE_PATH + "report.html");
+    }
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+
     }
 }
