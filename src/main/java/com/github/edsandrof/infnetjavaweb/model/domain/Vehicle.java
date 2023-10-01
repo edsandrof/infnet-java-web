@@ -1,6 +1,7 @@
 package com.github.edsandrof.infnetjavaweb.model.domain;
 
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
+import com.github.edsandrof.infnetjavaweb.model.enums.VehicleType;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -24,6 +25,10 @@ public abstract class Vehicle {
     private double basePrice;
 
     public Vehicle() {
+    }
+
+    public Vehicle(Long id) {
+        this.id = id;
     }
 
     public Vehicle(Long id, String brand, int year, FuelType fuelType, double basePrice) {
@@ -70,6 +75,6 @@ public abstract class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle brand: " + brand + ", year: " + year +", fuel type: " + fuelType;
+        return "Vehicle brand: " + brand + ", year: " + year + ", fuel type: " + fuelType;
     }
 }

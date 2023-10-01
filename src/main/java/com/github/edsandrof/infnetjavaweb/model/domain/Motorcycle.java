@@ -13,6 +13,10 @@ public class Motorcycle extends Vehicle {
     public Motorcycle() {
     }
 
+    public Motorcycle(Long id) {
+        super(id);
+    }
+
     public Motorcycle(Long id, String brand, int year, FuelType fuelType, double basePrice, boolean offRoad) {
         super(id, brand, year, fuelType, basePrice);
         this.offRoad = offRoad;

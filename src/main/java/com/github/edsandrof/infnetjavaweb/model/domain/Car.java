@@ -15,6 +15,10 @@ public class Car extends Vehicle {
     public Car() {
     }
 
+    public Car(Long id) {
+        super(id);
+    }
+
     public Car(Long id, String brand, int year, FuelType fuelType, double basePrice, CarDoors numberOfDoors) {
         super(id, brand, year, fuelType, basePrice);
         this.numberOfDoors = numberOfDoors;

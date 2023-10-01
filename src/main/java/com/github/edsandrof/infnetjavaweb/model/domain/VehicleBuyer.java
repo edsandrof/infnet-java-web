@@ -15,14 +15,14 @@ public class VehicleBuyer {
     public VehicleBuyer() {
     }
 
-    public VehicleBuyer(String name, String address) {
-        this.name = name;
-        this.address = address;
+    public VehicleBuyer(Long id) {
+        this.id = id;
     }
 
     public VehicleBuyer(Long id, String name, String address) {
-        this(name, address);
         this.id = id;
+        this.name = name;
+        this.address = address;
     }
 
     public Long getId() {

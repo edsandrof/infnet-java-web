@@ -19,6 +19,10 @@ public class Truck extends Vehicle {
     public Truck() {
     }
 
+    public Truck(Long id) {
+        super(id);
+    }
+
     public Truck(Long id, String brand, int year, FuelType fuelType, double basePrice, int loadCapacity, int numberOfAxle) {
         super(id, brand, year, fuelType, basePrice);
         this.loadCapacity = loadCapacity;
