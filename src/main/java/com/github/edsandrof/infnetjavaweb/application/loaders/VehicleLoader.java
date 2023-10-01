@@ -1,4 +1,4 @@
-package main.java.edsandrof.infnetjavaoo;
+package com.github.edsandrof.infnetjavaweb.application.loaders;
 
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleBuyer;
@@ -10,7 +10,7 @@ import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToTruck;
 
 import java.util.*;
 
-public class Application {
+public class VehicleLoader {
 
     public static void main(String[] args) {
         String path = "src/main/resources/";
