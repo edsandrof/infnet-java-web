@@ -31,34 +31,6 @@ public class VehicleLoader implements ApplicationRunner {
         this.csvService = csvService;
     }
 
-    public static void main(String[] args) {
-        List<Vehicle> vehiclesToBuy1 = Arrays.asList(
-                allVehicles.get(0),
-                allVehicles.get(2),
-                allVehicles.get(5)
-        );
-
-        List<Vehicle> vehiclesToBuy2 = Arrays.asList(
-                allVehicles.get(1),
-                allVehicles.get(4),
-                allVehicles.get(6)
-        );
-
-        // seller
-        VehicleDealer vehicleDealer = new VehicleDealer("AllCars Vehicles", "Street park",
-                new HashSet<>(allVehicles));
-
-        // buyers
-        VehicleBuyer fedexTransport = new VehicleBuyer("FedEx Transports", "1st Avenue");
-        VehicleBuyer dhlLogistics = new VehicleBuyer("DHL Logistics", "Central park");
-
-        // sales
-        vehicleDealer.saleVehicles(fedexTransport, vehiclesToBuy1);
-        vehicleDealer.saleVehicles(dhlLogistics, vehiclesToBuy2);
-
-        vehicleDealer.generateReport(FILE_PATH + "report.html");
-    }
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
         List<String[]> csvCars = csvService.readFile(FILE_PATH + "/cars.csv");
