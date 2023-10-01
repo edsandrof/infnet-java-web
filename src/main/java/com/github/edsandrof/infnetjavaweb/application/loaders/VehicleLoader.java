@@ -4,6 +4,7 @@ import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleBuyer;
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleDealer;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
+import com.github.edsandrof.infnetjavaweb.model.service.VehicleService;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToCar;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToMotorcycle;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToTruck;
@@ -31,15 +32,6 @@ public class VehicleLoader implements ApplicationRunner {
     }
 
     public static void main(String[] args) {
-        List<String[]> csvCars = csvService.readFile(FILE_PATH + "/cars.csv");
-        List<String[]> csvTrucks = csvService.readFile(FILE_PATH + "/trucks.csv");
-        List<String[]> csvMotorcycle = csvService.readFile(FILE_PATH + "/motorcycles.csv");
-
-        List<Vehicle> allVehicles = new ArrayList<>();
-        allVehicles.addAll(csvService.loadVehicles(csvCars, new CsvToCar()));
-        allVehicles.addAll(csvService.loadVehicles(csvTrucks, new CsvToTruck()));
-        allVehicles.addAll(csvService.loadVehicles(csvMotorcycle, new CsvToMotorcycle()));
-
         List<Vehicle> vehiclesToBuy1 = Arrays.asList(
                 allVehicles.get(0),
                 allVehicles.get(2),
@@ -69,6 +61,15 @@ public class VehicleLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        List<String[]> csvCars = csvService.readFile(FILE_PATH + "/cars.csv");
+        List<String[]> csvTrucks = csvService.readFile(FILE_PATH + "/trucks.csv");
+        List<String[]> csvMotorcycle = csvService.readFile(FILE_PATH + "/motorcycles.csv");
 
+        List<Vehicle> allVehicles = new ArrayList<>();
+        allVehicles.addAll(csvService.loadVehicles(csvCars, new CsvToCar()));
+        allVehicles.addAll(csvService.loadVehicles(csvTrucks, new CsvToTruck()));
+        allVehicles.addAll(csvService.loadVehicles(csvMotorcycle, new CsvToMotorcycle()));
+
+        vehicleService.registerAll(allVehicles);
     }
 }

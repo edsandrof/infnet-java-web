@@ -2,6 +2,7 @@ package com.github.edsandrof.infnetjavaweb.model.service;
 
 import com.github.edsandrof.infnetjavaweb.application.exceptions.FileException;
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+@Service
 public class CsvService {
     public List<String[]> readFile(String path) {
         List<String[]> fileContent = new LinkedList<>();

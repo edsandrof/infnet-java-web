@@ -26,6 +26,10 @@ public class VehicleService {
         return vehicleRepository.save(vehicle);
     }
 
+    public List<Vehicle> registerAll(List<Vehicle> vehicles) {
+        return vehicleRepository.saveAll(vehicles);
+    }
+
     public List<Vehicle> listAll() {
         return vehicleRepository.findAll();
     }
