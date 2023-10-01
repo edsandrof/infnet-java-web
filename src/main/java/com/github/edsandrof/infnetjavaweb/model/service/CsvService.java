@@ -31,7 +31,7 @@ public class CsvService {
         return fileContent;
     }
 
-    public List<Vehicle> loadVehicles(List<String[]> content, CsvToVehicle csvToVehicle) {
-        return csvToVehicle.convert(content);
+    public <T> List<T> loadType(List<String[]> content, CsvToType<T> csvToType) {
+        return csvToType.convert(content);
     }
 }
