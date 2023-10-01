@@ -3,12 +3,12 @@ package com.github.edsandrof.infnetjavaweb.model.service.impl;
 import com.github.edsandrof.infnetjavaweb.model.domain.Truck;
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
-import com.github.edsandrof.infnetjavaweb.model.service.CsvToVehicle;
+import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CsvToTruck implements CsvToVehicle {
+public class CsvToTruck implements CsvToType<Vehicle> {
 
     @Override
     public List<Vehicle> convert(List<String[]> content) {

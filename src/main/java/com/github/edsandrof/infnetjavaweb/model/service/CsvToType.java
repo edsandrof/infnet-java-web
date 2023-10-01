@@ -4,6 +4,6 @@ import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 
 import java.util.List;
 
-public interface CsvToVehicle {
-    List<Vehicle> convert(List<String[]> content);
+public interface CsvToType<T> {
+    List<T> convert(List<String[]> content);
 }
