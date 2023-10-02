@@ -4,12 +4,15 @@ import com.github.edsandrof.infnetjavaweb.model.enums.CarDoors;
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "car")
 public class Car extends Vehicle {
 
+    @Enumerated(EnumType.STRING)
     private CarDoors numberOfDoors;
 
     public Car() {

@@ -3,7 +3,6 @@ package com.github.edsandrof.infnetjavaweb.model.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "vehicle_sale")
@@ -17,7 +16,7 @@ public class VehicleSale {
     @ManyToOne
     private VehicleBuyer vehicleBuyer;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<Vehicle> vehicles;
 
     private double totalCost;
@@ -30,7 +29,7 @@ public class VehicleSale {
         this.purchaseDate = LocalDateTime.now();
         this.vehicleBuyer = vehicleBuyer;
         this.vehicles = vehicles;
-        this.totalCost = calculateTotalCost();
+        this.totalCost = 0;
     }
 
     public VehicleSale(Long id, VehicleBuyer vehicleBuyer, List<Vehicle> vehicles) {
@@ -62,6 +61,7 @@ public class VehicleSale {
     }
 
     public double getTotalCost() {
+        this.totalCost = calculateTotalCost();
         return totalCost;
     }
 

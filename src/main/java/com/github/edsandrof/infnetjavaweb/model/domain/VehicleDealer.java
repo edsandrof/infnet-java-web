@@ -1,7 +1,6 @@
 package com.github.edsandrof.infnetjavaweb.model.domain;
 
 import com.github.edsandrof.infnetjavaweb.application.exceptions.UnavailableVehicleException;
-import com.github.edsandrof.infnetjavaweb.model.Employee;
 import com.github.edsandrof.infnetjavaweb.model.service.ReportService;
 
 import java.util.*;

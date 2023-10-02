@@ -21,7 +21,7 @@ public class CsvToMotorcycle implements CsvToType<Vehicle> {
                     Integer.parseInt(cols[2]),
                     FuelType.safeValueOf(cols[3]),
                     Double.parseDouble(cols[4]),
-                    Boolean.getBoolean(cols[5])
+                    Boolean.parseBoolean(cols[5])
             ));
         }
         return motorcycles;

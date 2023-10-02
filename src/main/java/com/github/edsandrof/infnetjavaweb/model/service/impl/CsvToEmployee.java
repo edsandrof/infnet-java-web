@@ -1,6 +1,6 @@
 package com.github.edsandrof.infnetjavaweb.model.service.impl;
 
-import com.github.edsandrof.infnetjavaweb.model.Employee;
+import com.github.edsandrof.infnetjavaweb.model.domain.Employee;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 
 import java.util.ArrayList;

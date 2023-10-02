@@ -2,7 +2,8 @@ package com.github.edsandrof.infnetjavaweb.model.service;
 
 import com.github.edsandrof.infnetjavaweb.application.exceptions.EmployeeNotFoundException;
 import com.github.edsandrof.infnetjavaweb.infrastructure.repository.EmployeeRepository;
-import com.github.edsandrof.infnetjavaweb.model.Employee;
+import com.github.edsandrof.infnetjavaweb.model.domain.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
+    @Autowired
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
