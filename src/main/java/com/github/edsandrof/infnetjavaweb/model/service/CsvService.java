@@ -1,7 +1,6 @@
 package com.github.edsandrof.infnetjavaweb.model.service;
 
 import com.github.edsandrof.infnetjavaweb.application.exceptions.FileException;
-import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
