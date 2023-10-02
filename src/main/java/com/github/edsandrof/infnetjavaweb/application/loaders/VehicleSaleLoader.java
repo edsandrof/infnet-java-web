@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.github.edsandrof.infnetjavaweb.infrastructure.util.Constant.FILE_PATH;
 
-@Order(3)
+@Order(5)
 @Component
 public class VehicleSaleLoader implements ApplicationRunner {
 
@@ -29,6 +29,8 @@ public class VehicleSaleLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        System.out.println("loading vehicles sales to database");
+
         List<String[]> csvSales = csvService.readFile(FILE_PATH + "/sales.csv");
         List<VehicleSale> vehicleSales = csvService.loadType(csvSales, new CsvToVehicleSale());
 
