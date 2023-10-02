@@ -1,6 +1,7 @@
 package com.github.edsandrof.infnetjavaweb.model.domain;
 
 import com.github.edsandrof.infnetjavaweb.application.exceptions.UnavailableVehicleException;
+import com.github.edsandrof.infnetjavaweb.model.Employee;
 import com.github.edsandrof.infnetjavaweb.model.service.ReportService;
 
 import java.util.*;
@@ -10,12 +11,14 @@ public class VehicleDealer {
     private String address;
     private final VehicleSale[] sales;
     private final Set<Vehicle> availableVehicles;
+    private final Set<Employee> employees;
 
-    public VehicleDealer(String name, String address, Set<Vehicle> availableVehicles) {
+    public VehicleDealer(String name, String address, Set<Vehicle> availableVehicles, Set<Employee> employees) {
         this.name = name;
         this.address = address;
         this.availableVehicles = availableVehicles;
-        this.sales = new VehicleSale[10];
+        this.sales = new VehicleSale[100];
+        this.employees = employees;
     }
 
     public String getName() {
@@ -40,6 +43,10 @@ public class VehicleDealer {
 
     public Set<Vehicle> getAvailableVehicles() {
         return availableVehicles;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
     }
 
     public void saleVehicles(VehicleBuyer buyer, List<Vehicle> vehiclesToBuy) {

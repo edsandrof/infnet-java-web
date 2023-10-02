@@ -1,8 +1,6 @@
 package com.github.edsandrof.infnetjavaweb.model.domain;
 
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
-import com.github.edsandrof.infnetjavaweb.model.enums.VehicleType;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
