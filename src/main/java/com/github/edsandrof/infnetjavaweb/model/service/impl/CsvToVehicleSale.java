@@ -14,10 +14,9 @@ public class CsvToVehicleSale implements CsvToType<VehicleSale> {
     @Override
     public List<VehicleSale> convert(List<String[]> content) {
         List<VehicleSale> vehicleSales = new ArrayList<>();
-        List<Vehicle> vehicles = new ArrayList<>();
 
         for (String[] cols : content) {
-
+            List<Vehicle> vehicles = new ArrayList<>();
             String[] ids = cols[2].split("\\|");
 
             for (String typeAndId : ids) {

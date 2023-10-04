@@ -16,7 +16,7 @@ public class VehicleSale {
     @ManyToOne
     private VehicleBuyer vehicleBuyer;
 
-    @OneToMany(cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.DETACH})
     private List<Vehicle> vehicles;
 
     private double totalCost;
