@@ -16,7 +16,8 @@ public class CsvToVehicleBuyer implements CsvToType<VehicleBuyer> {
             buyers.add(new VehicleBuyer(
                     Long.parseLong(cols[0]),
                     cols[1],
-                    cols[2]
+                    cols[2],
+                    cols[3]
             ));
         }
         return buyers;

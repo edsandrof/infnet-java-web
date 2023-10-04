@@ -11,6 +11,7 @@ public class VehicleBuyer {
     private Long id;
     private String name;
     private String address;
+    private String phone;
 
     public VehicleBuyer() {
     }
@@ -19,10 +20,11 @@ public class VehicleBuyer {
         this.id = id;
     }
 
-    public VehicleBuyer(Long id, String name, String address) {
+    public VehicleBuyer(Long id, String name, String address, String phone) {
         this.id = id;
         this.name = name;
         this.address = address;
+        this.phone = phone;
     }
 
     public Long getId() {
@@ -47,6 +49,6 @@ public class VehicleBuyer {
 
     @Override
     public String toString() {
-        return "Buyer name: " + name + ", address: " + address;
+        return "Buyer name: " + name + ", address: " + address + ", phone: " + phone;
     }
 }
