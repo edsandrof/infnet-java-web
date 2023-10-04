@@ -1,6 +1,6 @@
 package com.github.edsandrof.infnetjavaweb.application.loaders;
 
-import com.github.edsandrof.infnetjavaweb.model.Employee;
+import com.github.edsandrof.infnetjavaweb.model.domain.Employee;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
 import com.github.edsandrof.infnetjavaweb.model.service.EmployeeService;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToEmployee;
@@ -31,9 +31,10 @@ public class VehicleDealerEmployeeLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("loading vehicle dealer employees to database");
 
-        List<String[]> csvEmployees = csvService.readFile(FILE_PATH + "/employees.txt");
+        List<String[]> csvEmployees = csvService.readFile(FILE_PATH + "/employees.csv");
         List<Employee> employees = csvService.loadType(csvEmployees, new CsvToEmployee());
 
         employeeService.registerAll(employees);
+        System.out.println("load finished");
     }
 }
