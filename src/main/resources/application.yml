@@ -1,9 +1,15 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
 
-spring.mvc.view.prefix=/WEB-INF/jsp/
-spring.mvc.view.suffix=.jsp
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: mysql123
+    url: jdbc:mysql://localhost:3306/javaweb?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=GMT
+    username: root
 
-spring.datasource.url=jdbc:mysql://localhost:3306/javaweb?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=GMT
-spring.datasource.username=root
-spring.datasource.password=mysql123
-spring.jpa.hibernate.ddl-auto=create
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  jpa:
+    generate-ddl: true
+    # show-sql: true
