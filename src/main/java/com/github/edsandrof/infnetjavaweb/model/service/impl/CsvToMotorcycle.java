@@ -3,6 +3,7 @@ package com.github.edsandrof.infnetjavaweb.model.service.impl;
 import com.github.edsandrof.infnetjavaweb.model.domain.Motorcycle;
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
+import com.github.edsandrof.infnetjavaweb.model.enums.MotorcycleCategory;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 
 import java.util.ArrayList;
@@ -21,7 +22,10 @@ public class CsvToMotorcycle implements CsvToType<Vehicle> {
                     Integer.parseInt(cols[2]),
                     FuelType.safeValueOf(cols[3]),
                     Double.parseDouble(cols[4]),
-                    Boolean.parseBoolean(cols[5])
+                    Double.parseDouble(cols[5]),
+                    Boolean.parseBoolean(cols[6]),
+                    Integer.parseInt(cols[7]),
+                    MotorcycleCategory.safeValueOf(cols[8])
             ));
         }
         return motorcycles;
