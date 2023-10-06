@@ -21,8 +21,10 @@ public class CsvToTruck implements CsvToType<Vehicle> {
                     Integer.parseInt(cols[2]),
                     FuelType.safeValueOf(cols[3]),
                     Double.parseDouble(cols[4]),
-                    Integer.parseInt(cols[5]),
-                    Integer.parseInt(cols[6])
+                    Double.parseDouble(cols[5]),
+                    Integer.parseInt(cols[6]),
+                    Integer.parseInt(cols[7]),
+                    Boolean.parseBoolean(cols[8])
             ));
         }
         return trucks;

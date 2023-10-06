@@ -16,6 +16,9 @@ public class Truck extends Vehicle {
     @Column(name = "number_axle")
     private int numberOfAxle;
 
+    @Column(name = "has_cargo_body")
+    private boolean hasCargoBody;
+
     public Truck() {
     }
 
@@ -23,10 +26,13 @@ public class Truck extends Vehicle {
         super(id);
     }
 
-    public Truck(Long id, String brand, int year, FuelType fuelType, double basePrice, int loadCapacity, int numberOfAxle) {
-        super(id, brand, year, fuelType, basePrice);
+    public Truck(Long id, String brand, int year, FuelType fuelType, double basePrice, double totalPrice,
+                 int loadCapacity, int numberOfAxle, boolean hasCargoBody) {
+
+        super(id, brand, year, fuelType, basePrice, totalPrice);
         this.loadCapacity = loadCapacity;
         this.numberOfAxle = numberOfAxle;
+        this.hasCargoBody = hasCargoBody;
     }
 
     public int getLoadCapacity() {
@@ -37,16 +43,28 @@ public class Truck extends Vehicle {
         return numberOfAxle;
     }
 
+    public boolean isHasCargoBody() {
+        return hasCargoBody;
+    }
+
     @Override
     public double getPrice() {
         double pricePerAxle = 4000;
+        double cargoBodyAdditional = 10000;
         double totalAxle = numberOfAxle * pricePerAxle;
 
-        return super.getBasePrice() + totalAxle;
+        double total = super.getBasePrice();
+        total += totalAxle;
+
+        if (hasCargoBody) {
+            total += cargoBodyAdditional;
+        }
+
+        return total;
     }
 
     @Override
     public String toString() {
-        return "load capacity: " + loadCapacity + ", number of axle: " + numberOfAxle + ", " + super.toString();
+        return "load capacity: " + loadCapacity + ", number of axle: " + numberOfAxle + ", has cargo body: " + hasCargoBody + super.toString();
     }
 }

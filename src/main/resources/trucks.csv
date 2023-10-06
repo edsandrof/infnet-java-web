@@ -1,3 +1,4 @@
-id,brand,year,fuel,base_price,load_capacity,number_axle
-6,Scania,2017,DIESEL,30000,8,6
-7,Toyota,2019,DIESEL,37000,10,8
+id,brand,year,fuel,base_price,total_price,load_capacity,number_axle,cargo_body
+7,Scania,2017,DIESEL,30000,64000,8,6,true
+8,Toyota,2019,DIESEL,37000,79000,10,8,true
+9,Iveco,2015,DIESEL,27000,43000,5,4,false
