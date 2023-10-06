@@ -1,3 +1,4 @@
-id,buyer_id,vehicle_ids
-1,1,C1|C3|T6
-2,2,C2|M5|T7
+id,buyer_id,vehicle_ids,total_cost
+1,1,C1|C3|T7,100500
+2,2,C2|M5|T8,115000
+3,1,M4|M6|T9,58000

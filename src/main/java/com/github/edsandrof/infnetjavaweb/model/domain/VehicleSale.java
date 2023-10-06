@@ -3,6 +3,7 @@ package com.github.edsandrof.infnetjavaweb.model.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "vehicle_sale")
@@ -29,7 +30,7 @@ public class VehicleSale {
         this.purchaseDate = LocalDateTime.now();
         this.vehicleBuyer = vehicleBuyer;
         this.vehicles = vehicles;
-        this.totalCost = 0;
+        this.totalCost = calculateTotalCost();
     }
 
     public VehicleSale(Long id, VehicleBuyer vehicleBuyer, List<Vehicle> vehicles) {
@@ -43,8 +44,10 @@ public class VehicleSale {
     private double calculateTotalCost() {
         double sum = 0;
 
-        for (Vehicle vehicle : vehicles) {
-            sum += vehicle.getPrice();
+        if (Objects.nonNull(vehicles)) {
+            for (Vehicle vehicle : vehicles) {
+                sum += vehicle.getPrice();
+            }
         }
         return sum;
     }
@@ -61,7 +64,6 @@ public class VehicleSale {
     }
 
     public double getTotalCost() {
-        this.totalCost = calculateTotalCost();
         return totalCost;
     }
 
