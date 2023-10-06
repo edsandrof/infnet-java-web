@@ -68,7 +68,7 @@ public class Motorcycle extends Vehicle {
         if (offRoad) {
             total += offRoadAdditional;
         }
-        if (category == MotorcycleCategory.TOURING) {
+        if (MotorcycleCategory.TOURING == category) {
             total += touringAdditional;
         }
         if (cubicCapacity > 175) {

@@ -26,7 +26,8 @@ public class CsvToVehicleSale implements CsvToType<VehicleSale> {
             VehicleSale sale = new VehicleSale(
                     Long.parseLong(cols[0]),
                     new VehicleBuyer(Long.parseLong(cols[1])),
-                    vehicles);
+                    vehicles,
+                    Double.parseDouble(cols[3]));
 
             vehicleSales.add(sale);
         }

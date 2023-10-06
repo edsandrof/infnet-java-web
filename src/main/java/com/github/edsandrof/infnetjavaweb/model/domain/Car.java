@@ -46,9 +46,9 @@ public class Car extends Vehicle {
 
         double total = super.getBasePrice();
 
-        if (numberOfDoors.equals(CarDoors.TWO_DOORS)) {
+        if (CarDoors.TWO_DOORS == numberOfDoors) {
             total += priceTwoDoors;
-        } else {
+        } else if (CarDoors.FOUR_DOORS == numberOfDoors) {
             total += priceFourDoors;
         }
 
@@ -64,6 +64,6 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return "Car - doors: " + numberOfDoors +", " + color + ", v8Engine: " + v8Engine + super.toString();
+        return "Car - doors: " + numberOfDoors + ", " + color + ", v8Engine: " + v8Engine + super.toString();
     }
 }
