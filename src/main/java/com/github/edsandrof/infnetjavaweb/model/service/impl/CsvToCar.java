@@ -3,6 +3,7 @@ package com.github.edsandrof.infnetjavaweb.model.service.impl;
 import com.github.edsandrof.infnetjavaweb.model.domain.Car;
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.enums.CarDoors;
+import com.github.edsandrof.infnetjavaweb.model.enums.Color;
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 
@@ -22,7 +23,10 @@ public class CsvToCar implements CsvToType<Vehicle> {
                     Integer.parseInt(cols[2]),
                     FuelType.safeValueOf(cols[3]),
                     Double.parseDouble(cols[4]),
-                    CarDoors.safeValueOf(cols[5])
+                    Double.parseDouble(cols[5]),
+                    CarDoors.safeValueOf(cols[6]),
+                    Color.safeValueOf(cols[7]),
+                    Boolean.parseBoolean(cols[8])
             ));
         }
         return cars;

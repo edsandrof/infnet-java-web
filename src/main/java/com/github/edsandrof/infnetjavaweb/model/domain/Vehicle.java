@@ -22,6 +22,9 @@ public abstract class Vehicle {
     @Column(name = "base_price")
     private double basePrice;
 
+    @Column(name = "total_price")
+    private double totalPrice;
+
     public Vehicle() {
     }
 
@@ -29,12 +32,13 @@ public abstract class Vehicle {
         this.id = id;
     }
 
-    public Vehicle(Long id, String brand, int year, FuelType fuelType, double basePrice) {
+    public Vehicle(Long id, String brand, int year, FuelType fuelType, double basePrice, double totalPrice) {
         this.id = id;
         this.brand = brand;
         this.year = year;
         this.fuelType = fuelType;
         this.basePrice = basePrice;
+        this.totalPrice = totalPrice;
     }
 
     public void accelarate() {
@@ -71,8 +75,12 @@ public abstract class Vehicle {
         this.basePrice = basePrice;
     }
 
+    public double getTotalPrice() {
+        return getPrice();
+    }
+
     @Override
     public String toString() {
-        return "Vehicle brand: " + brand + ", year: " + year + ", fuel type: " + fuelType;
+        return "brand: " + brand + ", year: " + year + ", fuel type: " + fuelType + ", base price: " + basePrice + ", total price: " + totalPrice;
     }
 }
