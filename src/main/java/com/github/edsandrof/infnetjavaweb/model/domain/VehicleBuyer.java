@@ -47,6 +47,10 @@ public class VehicleBuyer {
         this.address = address;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
     @Override
     public String toString() {
         return "Buyer name: " + name + ", address: " + address + ", phone: " + phone;
