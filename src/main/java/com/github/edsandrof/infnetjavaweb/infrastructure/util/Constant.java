@@ -16,6 +16,7 @@ public class Constant {
         private static final String CAR = "car";
         private static final String TRUCK = "truck";
         private static final String MOTORCYCLE = "motorcycle";
+        private static final String EMPLOYEE = "employee";
         private static final String LIST = "list";
         private static final String REGISTER = "register";
 
@@ -31,6 +32,10 @@ public class Constant {
         public static final String VEHICLE_TRUCK_REGISTER = VEHICLE_TRUCK + "/" + REGISTER;
         public static final String VEHICLE_MOTORCYCLE_LIST = VEHICLE_MOTORCYCLE + "/" + LIST;
         public static final String VEHICLE_MOTORCYCLE_REGISTER = VEHICLE_MOTORCYCLE + "/" + REGISTER;
+
+        public static final String EMPLOYEE_LIST = EMPLOYEE + "/" + LIST;
+        public static final String EMPLOYEE_REGISTER = EMPLOYEE + "/" + REGISTER;
+
 
         private Page() {
         }
