@@ -21,7 +21,7 @@ public class MotorcycleController {
 
     @GetMapping
     public String getListPage(Model model) {
-        model.addAttribute("trucks", motorcycleService.listAll());
+        model.addAttribute("motorcycles", motorcycleService.listAll());
         return Page.VEHICLE_MOTORCYCLE_LIST;
     }
 

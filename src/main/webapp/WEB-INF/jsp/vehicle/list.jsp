@@ -26,14 +26,14 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="c" items="${vehicles}">
+        <c:forEach var="v" items="${vehicles}">
             <tr>
-                <td>${c.id}</td>
-                <td>${c.brand}</td>
-                <td>${c.year}</td>
-                <td>${c.fuelType}</td>
-                <td>${c.basePrice}</td>
-                <td>${c.totalPrice}</td>
+                <td>${v.id}</td>
+                <td>${v.brand}</td>
+                <td>${v.year}</td>
+                <td>${v.fuelType}</td>
+                <td>${v.basePrice}</td>
+                <td>${v.totalPrice}</td>
                 <td></td>
             </tr>
         </c:forEach>
