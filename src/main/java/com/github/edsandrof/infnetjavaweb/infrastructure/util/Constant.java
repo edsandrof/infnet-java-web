@@ -46,4 +46,14 @@ public class Constant {
         private Page() {
         }
     }
+
+    public static class Route {
+        public static final String VEHICLE = "/" + Page.VEHICLE;
+        public static final String CAR = "/" + Page.VEHICLE_CAR;
+        public static final String TRUCK = "/" + Page.VEHICLE_TRUCK;
+        public static final String MOTORCYCLE = "/" + Page.VEHICLE_MOTORCYCLE;
+        public static final String EMPLOYEE = "/" + Page.EMPLOYEE;
+        public static final String VEHICLE_SALE = "/" + Page.VEHICLE_SALE;
+        public static final String VEHICLE_BUYER = "/" + Page.VEHICLE_BUYER;
+    }
 }
