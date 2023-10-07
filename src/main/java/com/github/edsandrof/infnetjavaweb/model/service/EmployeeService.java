@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -21,6 +22,11 @@ public class EmployeeService {
     public Employee find(Long id) {
         return employeeRepository.findById(id).orElseThrow(
                 () -> new EmployeeNotFoundException("Vehicle dealer employee " + id + " was not found"));
+    }
+
+    public Employee findByEmail(String email) {
+        return employeeRepository.findByEmail(email).orElseThrow(
+                () -> new EmployeeNotFoundException("Vehicle dealer employee " + email + " was not found"));
     }
 
     public List<Employee> listAll() {
@@ -38,5 +44,15 @@ public class EmployeeService {
     public void delete(Long id) {
         Employee employee = find(id);
         employeeRepository.delete(employee);
+    }
+
+    public Optional<Employee> validate(String email, String password) {
+        Employee employee = findByEmail(email);
+        Optional<Employee> result = Optional.empty();
+
+        if (employee.getPassword().equals(password)) {
+            result = Optional.of(employee);
+        }
+        return result;
     }
 }

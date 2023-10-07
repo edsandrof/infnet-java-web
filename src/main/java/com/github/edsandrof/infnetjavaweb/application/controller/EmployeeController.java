@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
+@SessionAttributes("employee")
 @RequestMapping(value = "/employee")
 @Controller
 public class EmployeeController {
@@ -42,5 +45,21 @@ public class EmployeeController {
         employeeService.delete(id);
 
         return Page.REDIRECT + Page.EMPLOYEE_LIST;
+    }
+
+    @PostMapping(value = "/validate")
+    public String validate(Model model, @RequestParam String email, @RequestParam String password) {
+        Optional<Employee> employee = employeeService.validate(email, password);
+
+        String page;
+
+        if (employee.isPresent()) {
+            model.addAttribute("employee", employee);
+            page = Page.HOME;
+
+        } else {
+            page = Page.REDIRECT + Page.LOGIN;
+        }
+        return page;
     }
 }
