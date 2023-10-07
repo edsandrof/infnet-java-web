@@ -2,10 +2,12 @@ package com.github.edsandrof.infnetjavaweb.model.service.impl;
 
 import com.github.edsandrof.infnetjavaweb.model.domain.Employee;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class CsvToEmployee implements CsvToType<Employee> {
 
     @Override

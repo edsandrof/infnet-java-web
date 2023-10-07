@@ -3,12 +3,14 @@ package com.github.edsandrof.infnetjavaweb.model.service.impl;
 import com.github.edsandrof.infnetjavaweb.model.domain.*;
 import com.github.edsandrof.infnetjavaweb.model.enums.VehicleType;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.github.edsandrof.infnetjavaweb.model.enums.VehicleType.*;
 
+@Service
 public class CsvToVehicleSale implements CsvToType<VehicleSale> {
 
     @Override

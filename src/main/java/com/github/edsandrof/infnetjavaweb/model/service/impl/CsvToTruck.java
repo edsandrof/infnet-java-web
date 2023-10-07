@@ -4,10 +4,12 @@ import com.github.edsandrof.infnetjavaweb.model.domain.Truck;
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.enums.FuelType;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class CsvToTruck implements CsvToType<Vehicle> {
 
     @Override

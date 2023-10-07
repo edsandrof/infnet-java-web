@@ -2,7 +2,7 @@ package com.github.edsandrof.infnetjavaweb.application.loaders;
 
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
-import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToCar;
+import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 import com.github.edsandrof.infnetjavaweb.model.service.impl.VehicleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -20,11 +20,13 @@ public class VehicleCarLoader implements ApplicationRunner {
 
     private final VehicleServiceImpl vehicleService;
     private final CsvService csvService;
+    private final CsvToType<Vehicle> csvToCar;
 
     @Autowired
-    public VehicleCarLoader(VehicleServiceImpl vehicleService, CsvService csvService) {
+    public VehicleCarLoader(VehicleServiceImpl vehicleService, CsvService csvService, CsvToType<Vehicle> csvToCar) {
         this.vehicleService = vehicleService;
         this.csvService = csvService;
+        this.csvToCar = csvToCar;
     }
 
     @Override
@@ -33,7 +35,7 @@ public class VehicleCarLoader implements ApplicationRunner {
 
         List<String[]> csvCars = csvService.readFile(FILE_PATH + "/cars.csv");
 
-        List<Vehicle> cars = csvService.loadType(csvCars, new CsvToCar());
+        List<Vehicle> cars = csvService.loadType(csvCars, csvToCar);
         cars = vehicleService.registerAll(cars);
     }
 }

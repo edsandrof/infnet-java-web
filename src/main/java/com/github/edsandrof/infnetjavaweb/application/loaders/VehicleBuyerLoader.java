@@ -2,8 +2,8 @@ package com.github.edsandrof.infnetjavaweb.application.loaders;
 
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleBuyer;
 import com.github.edsandrof.infnetjavaweb.model.service.CsvService;
+import com.github.edsandrof.infnetjavaweb.model.service.CsvToType;
 import com.github.edsandrof.infnetjavaweb.model.service.VehicleBuyerService;
-import com.github.edsandrof.infnetjavaweb.model.service.impl.CsvToVehicleBuyer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -20,11 +20,13 @@ public class VehicleBuyerLoader implements ApplicationRunner {
 
     private final VehicleBuyerService vehicleBuyerService;
     private final CsvService csvService;
+    private final CsvToType<VehicleBuyer> csvToVehicleBuyer;
 
     @Autowired
-    public VehicleBuyerLoader(VehicleBuyerService vehicleBuyerService, CsvService csvService) {
+    public VehicleBuyerLoader(VehicleBuyerService vehicleBuyerService, CsvService csvService, CsvToType<VehicleBuyer> csvToVehicleBuyer) {
         this.vehicleBuyerService = vehicleBuyerService;
         this.csvService = csvService;
+        this.csvToVehicleBuyer = csvToVehicleBuyer;
     }
 
     @Override
@@ -32,7 +34,7 @@ public class VehicleBuyerLoader implements ApplicationRunner {
         System.out.println("loading buyers to database");
 
         List<String[]> csvBuyers = csvService.readFile(FILE_PATH + "/buyers.csv");
-        List<VehicleBuyer> vehicleBuyers = csvService.loadType(csvBuyers, new CsvToVehicleBuyer());
+        List<VehicleBuyer> vehicleBuyers = csvService.loadType(csvBuyers, csvToVehicleBuyer);
 
         vehicleBuyerService.registerAll(vehicleBuyers);
     }
