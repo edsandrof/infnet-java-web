@@ -62,6 +62,18 @@ public class Car extends Vehicle {
         return total;
     }
 
+    public CarDoors getNumberOfDoors() {
+        return numberOfDoors;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public boolean isV8Engine() {
+        return v8Engine;
+    }
+
     @Override
     public String toString() {
         return "Car - doors: " + numberOfDoors + ", " + color + ", v8Engine: " + v8Engine + super.toString();
