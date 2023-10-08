@@ -16,10 +16,15 @@ public class VehicleSale {
     @ManyToOne
     private VehicleBuyer vehicleBuyer;
 
-    @OneToMany(cascade = {CascadeType.DETACH})
+    @OneToMany(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "vehicle_sale_id")
     private List<Vehicle> vehicles;
 
     private double totalCost;
+
+    public void setVehicles(List<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
 
     public List<Vehicle> getVehicles() {
         return vehicles;

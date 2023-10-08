@@ -81,6 +81,6 @@ public abstract class Vehicle {
 
     @Override
     public String toString() {
-        return "brand: " + brand + ", year: " + year + ", fuel type: " + fuelType + ", base price: " + basePrice + ", total price: " + totalPrice;
+        return ", brand: " + brand + ", year: " + year + ", fuel type: " + fuelType + ", base price: " + basePrice + ", total price: " + totalPrice;
     }
 }
