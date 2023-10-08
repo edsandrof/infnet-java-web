@@ -13,19 +13,19 @@ public class Constant {
         public static final String LOGIN = "login";
         public static final String ERROR = "error";
 
-        private static final String VEHICLE = "vehicle";
-        private static final String CAR = "car";
-        private static final String TRUCK = "truck";
-        private static final String MOTORCYCLE = "motorcycle";
-        private static final String EMPLOYEE = "employee";
-        private static final String VEHICLE_SALE = "vehiclesale";
-        private static final String VEHICLE_BUYER = "vehiclebuyer";
+        public static final String VEHICLE = "vehicle";
+        public static final String CAR = "car";
+        public static final String TRUCK = "truck";
+        public static final String MOTORCYCLE = "motorcycle";
+        public static final String EMPLOYEE = "employee";
+        public static final String VEHICLE_SALE = "vehiclesale";
+        public static final String VEHICLE_BUYER = "vehiclebuyer";
         private static final String LIST = "/list";
         private static final String REGISTER = "/register";
 
-        private static final String VEHICLE_CAR = VEHICLE + "/" + CAR;
-        private static final String VEHICLE_TRUCK = VEHICLE + "/" + TRUCK;
-        private static final String VEHICLE_MOTORCYCLE = VEHICLE + "/" + MOTORCYCLE;
+        public static final String VEHICLE_CAR = VEHICLE + "/" + CAR;
+        public static final String VEHICLE_TRUCK = VEHICLE + "/" + TRUCK;
+        public static final String VEHICLE_MOTORCYCLE = VEHICLE + "/" + MOTORCYCLE;
 
         public static final String VEHICLE_LIST = VEHICLE + LIST;
         public static final String VEHICLE_REGISTER = VEHICLE + REGISTER;

@@ -44,7 +44,7 @@ public class EmployeeController {
     public String delete(@PathVariable Long id) {
         employeeService.delete(id);
 
-        return Page.REDIRECT + Page.EMPLOYEE_LIST;
+        return Page.REDIRECT + Page.EMPLOYEE;
     }
 
     @PostMapping(value = "/validate")

@@ -41,6 +41,6 @@ public class VehicleSaleController {
     public String delete(@PathVariable Long id) {
         vehicleSaleService.delete(id);
 
-        return Page.REDIRECT + Page.VEHICLE_SALE_LIST;
+        return Page.REDIRECT + Page.VEHICLE_SALE;
     }
 }
