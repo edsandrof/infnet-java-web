@@ -16,5 +16,16 @@
         <h2>Gestão de Concessionárias</h2>
     </div>
 </div>
+
+
+Funcionalidades WEB implementadas
+<ul>
+    <li>Login</li>
+    <li>Cadastro de usuários</li>
+    <li>Cadastro de carros</li>
+    <li>Listas</li>
+    <li>Exclusão</li>
+</ul>
+
 </body>
 </html>
