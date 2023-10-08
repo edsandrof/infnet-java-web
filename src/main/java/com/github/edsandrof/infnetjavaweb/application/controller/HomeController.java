@@ -28,4 +28,9 @@ public class HomeController {
 
 		return Page.HOME;
 	}
+
+	@GetMapping(value = "/about")
+	public String getAboutPage() {
+		return Page.ABOUT;
+	}
 }
