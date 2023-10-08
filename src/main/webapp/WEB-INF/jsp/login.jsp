@@ -5,14 +5,14 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>ALLCARS - VehicleDealer</title>
-    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="menu.jsp"/>
 <div class="container mt-3">
     <h2>Autenticação</h2>
 
-    <form action="/employee/validate" method="post">
+    <form action="${pageContext.request.contextPath}/employee/validate" method="post">
 
         <div class="mb-3 mt-3">
             <label for="email">E-mail:</label>
