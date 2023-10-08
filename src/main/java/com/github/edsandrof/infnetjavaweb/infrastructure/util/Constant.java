@@ -11,6 +11,7 @@ public class Constant {
         public static final String REDIRECT = "redirect:/";
         public static final String HOME = "home";
         public static final String LOGIN = "login";
+        public static final String ERROR = "error";
 
         private static final String VEHICLE = "vehicle";
         private static final String CAR = "car";
