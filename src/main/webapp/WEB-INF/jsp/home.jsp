@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>VehicleDealer</title>
+    <title>ALLCARS - VehicleDealer</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
 <div class="container-fluid mt-3">
     <div style="text-align: center;">
-        <h1>Vehicle Dealer</h1>
+        <h1>ALLCARS</h1>
         <h2>Gestão de Concessionárias</h2>
     </div>
 </div>

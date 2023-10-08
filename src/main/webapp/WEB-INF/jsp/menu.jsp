@@ -5,7 +5,7 @@
 <nav class="navbar navbar-dark bg-success">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/about">VehicleDealer</a>
+            <a class="navbar-brand" href="/about">ALLCARS</a>
         </div>
 
         <ul class="nav navbar-nav">
