@@ -16,7 +16,7 @@
 
         <div class="mb-3 mt-3">
             <label for="email">E-mail:</label>
-            <input type="email" class="form-control" value="admin@admin.com" id="email"
+            <input type="email" class="form-control" value="admin@allcars.com" id="email"
                    placeholder="Entre com o seu -mail" name="email">
         </div>
 

@@ -54,7 +54,7 @@ public class EmployeeController {
         String page;
 
         if (employee.isPresent()) {
-            model.addAttribute("employee", employee);
+            model.addAttribute("employee", employee.get());
             page = Page.HOME;
 
         } else {

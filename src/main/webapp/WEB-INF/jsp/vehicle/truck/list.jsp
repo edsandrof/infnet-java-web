@@ -22,7 +22,7 @@
             <td>Combustível</td>
             <td>Preço base</td>
             <td>Preço total</td>
-            <td>Capacidade de carga (T)</td>
+            <td>Capacidade de carga</td>
             <td>Número de Eixos</td>
             <td>Caçamba</td>
             <td></td>
