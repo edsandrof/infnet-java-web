@@ -30,7 +30,7 @@
                 <td>${e.name}</td>
                 <td>${e.email}</td>
                 <td>${e.password}</td>
-                <td></td>
+                <td><a href="${pageContext.request.contextPath}/employee/${e.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

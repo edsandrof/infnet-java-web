@@ -40,7 +40,7 @@
                 <td>${t.loadCapacity}</td>
                 <td>${t.numberOfAxle}</td>
                 <td>${t.hasCargoBody}</td>
-                <td></td>
+                <td><a href="${pageContext.request.contextPath}/vehicle/truck/${t.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

@@ -40,7 +40,7 @@
                 <td>${c.numberOfDoors}</td>
                 <td>${c.color}</td>
                 <td>${c.v8Engine}</td>
-                <td></td>
+                <td><a href="${pageContext.request.contextPath}/vehicle/car/${c.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

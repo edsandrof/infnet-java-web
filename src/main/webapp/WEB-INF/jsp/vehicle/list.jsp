@@ -34,7 +34,7 @@
                 <td>${v.fuelType}</td>
                 <td>${v.basePrice}</td>
                 <td>${v.totalPrice}</td>
-                <td></td>
+                <td><a href="${pageContext.request.contextPath}/vehicle/${v.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

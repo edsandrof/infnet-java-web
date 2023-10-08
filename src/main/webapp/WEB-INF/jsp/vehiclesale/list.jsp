@@ -32,7 +32,7 @@
                 <td>${s.vehicleBuyer}</td>
                 <td>${s.vehicles}</td>
                 <td>${s.totalCost}</td>
-                <td></td>
+                <td><a href="${pageContext.request.contextPath}/vehiclesale/${s.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
         </tbody>

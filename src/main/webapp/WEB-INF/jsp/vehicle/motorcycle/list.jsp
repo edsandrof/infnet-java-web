@@ -40,7 +40,7 @@
                 <td>${m.offRoad}</td>
                 <td>${m.cubicCapacity}</td>
                 <td>${m.category}</td>
-                <td></td>
+                <td><a href="${pageContext.request.contextPath}/vehicle/motorcycle/${m.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
         </tbody>
