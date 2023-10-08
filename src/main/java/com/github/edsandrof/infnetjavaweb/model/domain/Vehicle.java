@@ -41,6 +41,14 @@ public abstract class Vehicle {
         this.totalPrice = totalPrice;
     }
 
+    public Vehicle(String brand, int year, FuelType fuelType, double basePrice, double totalPrice) {
+        this.brand = brand;
+        this.year = year;
+        this.fuelType = fuelType;
+        this.basePrice = basePrice;
+        this.totalPrice = totalPrice;
+    }
+
     public void accelarate() {
         System.out.println("This vehicle is accelerating...");
     }
@@ -77,6 +85,26 @@ public abstract class Vehicle {
 
     public double getTotalPrice() {
         return getPrice();
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setFuelType(FuelType fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     @Override

@@ -47,6 +47,18 @@ public class Truck extends Vehicle {
         return hasCargoBody;
     }
 
+    public void setLoadCapacity(int loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    public void setNumberOfAxle(int numberOfAxle) {
+        this.numberOfAxle = numberOfAxle;
+    }
+
+    public void setHasCargoBody(boolean hasCargoBody) {
+        this.hasCargoBody = hasCargoBody;
+    }
+
     @Override
     public double getPrice() {
         double pricePerAxle = 4000;

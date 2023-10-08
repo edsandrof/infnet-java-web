@@ -74,6 +74,18 @@ public class Car extends Vehicle {
         return v8Engine;
     }
 
+    public void setNumberOfDoors(CarDoors numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setV8Engine(boolean v8Engine) {
+        this.v8Engine = v8Engine;
+    }
+
     @Override
     public String toString() {
         return "Car - doors: " + numberOfDoors + ", " + color + ", v8Engine: " + v8Engine + super.toString();
