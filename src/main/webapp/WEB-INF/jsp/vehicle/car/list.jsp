@@ -11,6 +11,7 @@
 <jsp:include page="../../menu.jsp"/>
 
 <div class="container-fluid mt-3">
+    <h4><a href="${pageContext.request.contextPath}/vehicle/car/register"> Novo</a></h4>
     <h3>Listagem de Carros:</h3>
 
     <table class="table table-striped">
