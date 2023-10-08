@@ -51,6 +51,14 @@ public class VehicleBuyer {
         return phone;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
         return "Buyer name: " + name + ", address: " + address + ", phone: " + phone;

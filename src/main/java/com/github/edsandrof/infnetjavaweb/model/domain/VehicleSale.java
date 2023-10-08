@@ -71,6 +71,22 @@ public class VehicleSale {
         return totalCost;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPurchaseDate(LocalDateTime purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public void setVehicleBuyer(VehicleBuyer vehicleBuyer) {
+        this.vehicleBuyer = vehicleBuyer;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
     @Override
     public String toString() {
         return "Sale purchase date: " + purchaseDate +

@@ -57,6 +57,10 @@ public class Employee {
         this.password = password;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Employee name: " + name + ", email: " + email + ", password: " + password;
