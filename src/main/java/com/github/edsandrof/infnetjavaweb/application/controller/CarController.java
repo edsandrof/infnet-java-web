@@ -37,7 +37,7 @@ public class CarController {
         return Page.REDIRECT;
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/{id}")
     public String delete(@PathVariable Long id) {
         carService.delete(id);
 

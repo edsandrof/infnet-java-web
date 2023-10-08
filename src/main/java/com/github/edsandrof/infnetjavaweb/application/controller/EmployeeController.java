@@ -40,7 +40,7 @@ public class EmployeeController {
         return Page.REDIRECT;
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/{id}")
     public String delete(@PathVariable Long id) {
         employeeService.delete(id);
 
