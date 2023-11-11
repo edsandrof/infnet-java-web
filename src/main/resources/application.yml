@@ -7,9 +7,14 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: mysql123
-    url: jdbc:mysql://localhost:3306/javaweb?createDatabaseIfNotExist=true&useTimezone=true&serverTimezone=GMT
+    url: jdbc:mysql://localhost:3306/javadb?createDatabaseIfNotExist=true     # create database if not exists
     username: root
 
   jpa:
-    generate-ddl: true
-    # show-sql: true
+    show-sql: true
+    generate-ddl: false   # generate database using JPA annotations (like @Entity)
+
+  sql:
+    init:
+      mode: always        # create tables using schema.sql file
+      schema-locations: classpath:schema.sql
