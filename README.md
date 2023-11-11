@@ -1,7 +1,8 @@
-Infnet - Tecnologia Java e Orientação a Objetos - Prof. Rubens Lopes de Oliveira
+Infnet - Banco de Dados e Persistência em Java - Prof. Fabio Araujo Guilherme
 
-Crie um projeto que organize as regras de negócio em seis classes da
-seguinte maneira:
+Utilizando o Spring Framework, desenvolva um projeto que atue no mapeamento de uma aplicação web. Escolha um tema e defina as entidades necessárias para representá-las.
+
+Organize as regras de negócio em seis classes da seguinte maneira:
 
 - Uma classe mãe abstrata
   - Três classes filhas
@@ -11,33 +12,21 @@ seguinte maneira:
   - 1:n com a classe mãe
 
 
-O projeto será organizado em 4 features:
+Esta aplicação deve ter as seguintes especificidades:
 
-Feature - 01
-- Todas as classes precisam ter pelo menos três atributos e todos
-os tipos de dados precisam ser utilizados em pelo menos uma
-ocorrência.
-- As classes de teste precisam ter pelo menos três instâncias dos
-objetos.
-- Todas as classes de domínio precisam ter o toString
-implementado.
-- A classe de associação (“Solicitante”) precisa ter um construtor
-que receba todos os atributos como parâmetro.
+- Banco de dados criado automaticamente no start da aplicação.
+- Configurações de criação e de acesso aos dados em arquivo de propriedade.
+- Adição das dependências necessárias para a utilização do Spring Data.
+- Adição das dependências necessárias para o hibernate/jpa.
+- Os atributos e os relacionamentos das classes de negócio devem ser mapeados.
+- O projeto precisa estar organizado em três camadas (podem, opcionalmente, incluir uma camada de visão caso caso queiram):
+  - controle; serviço; e repository.
 
-Feature - 02
-- É necessário criar um método abstrato na classe mãe.
-- Cada filha precisa implementar diferentemente o método abstrato.
+- Todas as classes precisam ter as seguintes funcionalidades:
+  - incluir;
+  excluir;
+  alterar;
+  obter lista; e
+  obter por id.
 
-Feature - 03
-- Criação de um atributo do tipo vetor.
-- Criação de um atributo do tipo Set.
-- Criação do relacionamento entre a classe principal e a mãe com
-List.
-
-Feature - 04
-- Criação de classes de exceptions para tratar regras de negócio.
-- Cada classe de negócio deve usar uma classe de exception.
-- Fazer a leitura de um arquivo texto com o layout definido pelo
-aluno.
-- Um arquivo texto deve ser gerado com um layout diferente da
-entrada.
+- Classes loaders precisam ser criadas para incluir informações iniciais no banco.
