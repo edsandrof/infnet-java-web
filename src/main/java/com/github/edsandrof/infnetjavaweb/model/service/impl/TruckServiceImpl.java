@@ -44,4 +44,9 @@ public class TruckServiceImpl implements VehicleService<Truck> {
         Truck vehicle = find(id);
         truckRepository.delete(vehicle);
     }
+
+    @Override
+    public Truck update(Truck vehicle) {
+        return truckRepository.save(vehicle);
+    }
 }

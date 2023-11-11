@@ -3,11 +3,14 @@ package com.github.edsandrof.infnetjavaweb.model.service;
 import com.github.edsandrof.infnetjavaweb.application.exceptions.FileException;
 import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleSale;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+@Deprecated
+@Service
 public class ReportService {
     private static final char OPEN_TAG = '<';
     private static final char CLOSE_TAG = '>';

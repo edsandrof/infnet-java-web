@@ -44,4 +44,9 @@ public class MotorcycleServiceImpl implements VehicleService<Motorcycle> {
         Motorcycle vehicle = find(id);
         motorcycleRepository.delete(vehicle);
     }
+
+    @Override
+    public Motorcycle update(Motorcycle vehicle) {
+        return motorcycleRepository.save(vehicle);
+    }
 }

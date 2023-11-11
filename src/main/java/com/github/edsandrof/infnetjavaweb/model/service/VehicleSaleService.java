@@ -35,6 +35,10 @@ public class VehicleSaleService {
         return vehicleSaleRepository.findAll();
     }
 
+    public VehicleSale update(VehicleSale vehicleSale) {
+        return vehicleSaleRepository.save(vehicleSale);
+    }
+
     public void delete(Long id) {
         VehicleSale vehicleSale = find(id);
         vehicleSaleRepository.delete(vehicleSale);

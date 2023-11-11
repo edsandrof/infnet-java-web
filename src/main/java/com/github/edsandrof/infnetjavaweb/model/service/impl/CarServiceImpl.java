@@ -44,4 +44,9 @@ public class CarServiceImpl implements VehicleService<Car> {
         Car vehicle = find(id);
         carRepository.delete(vehicle);
     }
+
+    @Override
+    public Car update(Car vehicle) {
+        return carRepository.save(vehicle);
+    }
 }

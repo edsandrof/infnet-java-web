@@ -60,6 +60,7 @@ public class VehicleDealer {
         vehiclesToBuy.forEach(availableVehicles::remove);
     }
 
+    @Deprecated
     public void generateReport(String path) {
         ReportService reportService = new ReportService();
         reportService.writeReport(path, name, sales);

@@ -25,7 +25,7 @@ public class EmployeeService {
     }
 
     public Employee findByEmail(String email) {
-        return employeeRepository.findByEmail(email).orElseThrow(
+        return employeeRepository.findByCustomEmailQuery(email).orElseThrow(
                 () -> new EmployeeNotFoundException("Vehicle dealer employee " + email + " was not found"));
     }
 
@@ -54,5 +54,9 @@ public class EmployeeService {
             result = Optional.of(employee);
         }
         return result;
+    }
+
+    public Employee update(Employee employee) {
+        return employeeRepository.save(employee);
     }
 }

@@ -2,7 +2,6 @@ package com.github.edsandrof.infnetjavaweb.model.service;
 
 import com.github.edsandrof.infnetjavaweb.application.exceptions.VehicleNotFoundException;
 import com.github.edsandrof.infnetjavaweb.infrastructure.repository.VehicleBuyerRepository;
-import com.github.edsandrof.infnetjavaweb.model.domain.Vehicle;
 import com.github.edsandrof.infnetjavaweb.model.domain.VehicleBuyer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +32,10 @@ public class VehicleBuyerService {
 
     public List<VehicleBuyer> listAll() {
         return vehicleBuyerRepository.findAll();
+    }
+
+    public VehicleBuyer update(VehicleBuyer vehicleBuyer) {
+        return vehicleBuyerRepository.save(vehicleBuyer);
     }
 
     public void delete(Long id) {

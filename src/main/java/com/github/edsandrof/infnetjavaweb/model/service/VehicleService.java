@@ -12,4 +12,6 @@ public interface VehicleService<T> {
     List<T> listAll();
 
     void delete(Long id);
+
+    T update(T vehicle);
 }
